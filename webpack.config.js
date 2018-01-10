@@ -3,6 +3,9 @@ const path = require('path');
 module.exports = {
   context: path.join(__dirname, '/src'),
 
+  devtool: "source-map",
+  //dev tools tells you what line the error is in project file rather than bundle
+
   entry: {
     javascript: './js/index'
   },
