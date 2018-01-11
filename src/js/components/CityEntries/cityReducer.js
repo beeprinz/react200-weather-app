@@ -1,31 +1,32 @@
 const defaultState = {
-    description: '',
-    amount: '',
-    lineItems: []
+    cityName: '',
+    history: []
   };
   
   export default function CityReducer (state = defaultState, action) {
     const { type, payload } = action;
 
     switch (type) {
-        case 'UPDATE_CITY_NAME' : {
+
+        case 'GET_WEATHER_FULFILLED' : {
             return {
                 ...state,
-                description: payload.description
+                cityName: payload.location.city,
+                history:[
+                    ...state.history,
+                    payload.location.city
+                ]
+            };
+        }    //had to add FULFILLED BECAUSE OF MIDDLEWARE?
+
+        case 'ADD_CITY': {
+            const { cityName } = action.payload;
+            return {
+                ...state,
+                cityName: '',
+                
             };
         }
-
-        //weather data from axios call
-    case 'ADD_CITY': {
-        const { description } = action.payload;
-        return {
-            description: '',
-            lineItems:[
-                ...state.lineItems,
-                { description }
-            ]
-        };
-    }
     default: {
         return state;
       }

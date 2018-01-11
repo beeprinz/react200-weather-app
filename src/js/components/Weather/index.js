@@ -1,3 +1,11 @@
 import Weather from './Weather';
+import { connect } from 'react-redux';
 
-export default Weather;
+function mapStoreToProps(store) {
+    return {
+      expenseItems: store.city.lineItems
+    };
+  }
+
+
+export default connect(mapStoreToProps)(Weather);

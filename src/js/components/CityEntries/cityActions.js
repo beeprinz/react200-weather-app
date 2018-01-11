@@ -1,16 +1,19 @@
 import axios from "axios";
 
-export function updateCityName(description) {
-  return {
-    type: "UPDATE_CITY_NAME",
-    payload: { description }
-  };
-}
-
-export function getWeather(request) {
+export function getWeather(cityName) { 
+    //Going to change request into the city name that's going to be passed into 
+    //the axios req url to find city. Set everything else up and figure this out later
+    console.log({cityName})
   return {
     type: "GET_WEATHER",
-    payload: { request }
+    payload:     
+    axios
+    .get(`/api/${cityName}`)
+    .then(r => r.data)
+    .catch(err => {
+      console.log(err);
+    })
+    //how to plug in city name at request?
 
   };
 }
@@ -25,4 +28,3 @@ export function addCity(description, request) {
   };
 }
 
-//city data from axios call will go into payload

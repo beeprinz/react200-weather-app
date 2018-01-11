@@ -6,7 +6,7 @@ import CityEntries from './CityEntries';
 function mapStoreToProps(store) {
   return {
     description: store.city.description,
-    
+    request: store.city.request,
     lineItems: store.city.lineItems
   };
 }
