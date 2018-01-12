@@ -3,9 +3,7 @@ import axios from "axios";
 
 // We'll need to import all those action creators.
 import {
-    updateCityName,
-    getWeather,
-    addCity
+    getWeather
 } from './cityActions';
 
 export default class CityEntries extends React.Component {
@@ -34,7 +32,7 @@ handleCitySearch() {
 
 render() {
     // These values were provided by connect()
-    const { description, request, lineItems } = this.props;
+    // const { description, request, lineItems } = this.props;
     return <form className="form-inline" onSubmit={e => e.preventDefault() }>
         <div className="form-group mx-sm-3 my-4">
           <input 

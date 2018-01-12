@@ -3,7 +3,18 @@ import { connect } from 'react-redux';
 
 function mapStoreToProps(store) {
     return {
-      expenseItems: store.city.lineItems
+    //   selectedCity: store.city.cityName,
+    //   currentTemp: store.city.currentTemp,
+    //   condition: store.city.condition,
+    //   humidity: store.city.humidity,
+    //   lowTemp: store.city.lowTemp,
+    //   highTemp: store.city.highTemp,
+    //   windSpeed: store.city.windSpeed,
+      city: store.city.city
+    //created an objected city that contains all the above props so we don't 
+    //have to pass each one individually
+    
+    //   history: store.city.history
     };
   }
 

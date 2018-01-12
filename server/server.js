@@ -11,7 +11,8 @@ app.get('/api/:name', (req,res) => {
     console.log(req.params.name);
     const city = req.params.name;
     axios
-    .get(`http://api.wunderground.com/api/2d0b2b49f5e95886/forecast/geolookup/conditions/q/CA/${city}.json`)
+    // .get(`http://api.wunderground.com/api/2d0b2b49f5e95886/forecast/geolookup/conditions/q/United_States/${city}.json`)
+    .get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a6cad5437ae93c93a567e8c017149594&units=imperial`)
     .then(r => res.send(r.data))
     .catch(err => res.status(500).send('bad response'));
 })

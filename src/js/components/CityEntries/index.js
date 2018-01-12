@@ -5,9 +5,9 @@ import CityEntries from './CityEntries';
 // that's passed to the props of the component.
 function mapStoreToProps(store) {
   return {
-    description: store.city.description,
-    request: store.city.request,
-    lineItems: store.city.lineItems
+    cityName: store.city.cityName,
+    // currentTemp: store.city.currentTemp,
+    // history: store.city.history
   };
 }
 

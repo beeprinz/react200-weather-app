@@ -1,6 +1,7 @@
 const defaultState = {
     cityName: '',
-    history: []
+    history: [],
+    city: {}
   };
   
   export default function CityReducer (state = defaultState, action) {
@@ -10,14 +11,31 @@ const defaultState = {
 
         case 'GET_WEATHER_FULFILLED' : {
             return {
-                ...state,
-                cityName: payload.location.city,
-                history:[
+               city:{
+                    ...state,
+                cityName: payload.name,
+                currentTemp: payload.main.temp,
+                conditions: payload.weather[0].main,
+                icon: payload.weather[0].icon,
+                humidity: payload.main.humidity,
+                lowTemp: payload.main.temp_min,
+                highTemp: payload.main.temp_max,
+                windSpeed: payload.wind.speed,
+                history: [
                     ...state.history,
-                    payload.location.city
+                    { cityName: payload.name, 
+                        CurrentTemp: payload.main.temp, 
+                        conditions: payload.weather[0].main,
+                        icon: payload.weather[0].icon,
+                        humidity: payload.main.humidity,
+                        lowTemp: payload.main.temp_min,
+                        highTemp: payload.main.temp_max,
+                        windSpeed: payload.wind.speed,
+                    }
                 ]
+            }
             };
-        }    //had to add FULFILLED BECAUSE OF MIDDLEWARE?
+        }    //ADD MORE STUFF TO THE ARRAY
 
         case 'ADD_CITY': {
             const { cityName } = action.payload;
