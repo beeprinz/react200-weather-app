@@ -10,7 +10,7 @@ function mapStoreToProps(store) {
     //   lowTemp: store.city.lowTemp,
     //   highTemp: store.city.highTemp,
     //   windSpeed: store.city.windSpeed,
-      city: store.city.city
+      city: store.city
     //created an objected city that contains all the above props so we don't 
     //have to pass each one individually
     

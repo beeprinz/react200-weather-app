@@ -8,7 +8,7 @@ render() {
     // These values were provided by connect()
     // const { selectedCity, currentTemp, condition, humidity, lowTemp, highTemp, windSpeed } = this.props;
     const {city} = this.props; 
-    console.log('props log',this.props)
+    console.log('weather props',this.props);
    
     return (
 
@@ -18,7 +18,6 @@ render() {
               </h5>
               <div className="card-body">
                 <h3 className="card-title text-center">{city.cityName}</h3>
-                {/* <p className="text-center">weather icon{city.icon}</p> */}
                 <img className='img-fluid mx-auto d-block' src={ `http://openweathermap.org/img/w/${city.icon}.png` } />
                 <div className="container">
                 <div className="row">

@@ -1,18 +1,22 @@
 const defaultState = {
     cityName: '',
     history: [],
-    city: {}
+    currentTemp: '',
+    conditions: '',
+    icon: '',
+    humidity: '',
+    lowTemp: '',
+    highTemp: '',
+    windSpeed: '',
   };
   
   export default function CityReducer (state = defaultState, action) {
     const { type, payload } = action;
 
     switch (type) {
-
         case 'GET_WEATHER_FULFILLED' : {
             return {
-               city:{
-                    ...state,
+                ...state,
                 cityName: payload.name,
                 currentTemp: payload.main.temp,
                 conditions: payload.weather[0].main,
@@ -23,7 +27,7 @@ const defaultState = {
                 windSpeed: payload.wind.speed,
                 history: [
                     ...state.history,
-                    { cityName: payload.name, 
+                    {   cityName: payload.name, 
                         CurrentTemp: payload.main.temp, 
                         conditions: payload.weather[0].main,
                         icon: payload.weather[0].icon,
@@ -33,15 +37,13 @@ const defaultState = {
                         windSpeed: payload.wind.speed,
                     }
                 ]
-            }
             };
         }    //ADD MORE STUFF TO THE ARRAY
 
-        case 'ADD_CITY': {
-            const { cityName } = action.payload;
+        case 'SET_CITY_FROM_HISTORY': {
             return {
                 ...state,
-                cityName: '',
+                ...payload,
                 
             };
         }

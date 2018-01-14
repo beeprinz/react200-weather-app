@@ -18,14 +18,11 @@ export function getWeather(cityName) {
   };
 }
 
-export function addCity(description, request) {
-    console.log('add city consolelog', description, request)
+export function getCityByHistory(cityObject) {
+
   return {
-    type: "ADD_CITY",
-    payload: { 
-        description,
-        request
-     }
+    type: "SET_CITY_FROM_HISTORY",
+    payload: cityObject
   };
 }
 
