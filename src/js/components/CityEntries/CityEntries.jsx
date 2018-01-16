@@ -55,12 +55,8 @@ render() {
         {/* </div> */}
         </div>
 
-        <h1>{ this.props.error }</h1>
-        {/* if else statement saying if this.props.error === '' return nothing, else return alert */}
-
-        {/* <div className="alert alert-success" role="alert">
-                    <h4 className="alert-heading">{ this.props.error }</h4>
-                  </div> */}
+        { this.props.error && <div className="alert alert-danger mt-3" role="alert">
+        <h4 className="alert-heading">{ this.props.error }</h4></div> }
 
     <form className="form-inline" onSubmit={e => e.preventDefault() }>
         <div className="form-group mx-sm-3 my-4">

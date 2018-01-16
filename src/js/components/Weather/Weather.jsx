@@ -18,7 +18,8 @@ render() {
               </h5>
               <div className="card-body">
                 <h3 className="card-title text-center">{city.cityName}</h3>
-                <img className='img-fluid mx-auto d-block' src={ `http://openweathermap.org/img/w/${city.icon}.png` } />
+                {city.icon && <img className='img-fluid mx-auto d-block' src={ `http://openweathermap.org/img/w/${city.icon}.png` } /> }
+                
                 <div className="container">
                 <div className="row">
                 <div className="col-md-4">
