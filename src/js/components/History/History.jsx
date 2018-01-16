@@ -3,11 +3,20 @@ import React from 'react';
 
 export default class History extends React.Component {
 
+// renderHistory() {
+//     const { history } = this.props
+//     if (!history.length) { return null }
+//     return history.map(city => {
+//         return <a href="#" key={city.cityName} className="list-group-item list-group-item-action">{city.cityName}</a>
+//     })
+// }
+//error: flatten children if you type in the same city more than once. child keys must be uniqe
+
 renderHistory() {
     const { history } = this.props
     if (!history.length) { return null }
-    return history.map(city => {
-        return <a href="#" key={city.cityName} className="list-group-item list-group-item-action">{city.cityName}</a>
+    return history.map((city, index) => {
+        return <a href="#" key={index} className="list-group-item list-group-item-action">{city.cityName} <p className='small'>{city.dateCalendar} {city.dateHour}</p></a>
     })
 }
     
@@ -18,21 +27,6 @@ render() {
 
     
     return (
-
-        // <div className="card border-info">
-        //       <h5 className="card-header bg-info text-white">
-        //         Search History
-        //       </h5>
-        //       <div className="card-body">
-        //       <div className="list-group">
-
-        //       <a href="#" className="list-group-item list-group-item-action">{history.cityName}</a>
-        //       {/* <a href="#" className="list-group-item list-group-item-action">{history[0].cityName}</a> */}
-        //       <a href="#" className="list-group-item list-group-item-action">San Diego</a>
-        //     </div>
-        //       </div>
-        //     </div>
-
     
         <div className="card border-info">
             <h5 className="card-header bg-info text-white">

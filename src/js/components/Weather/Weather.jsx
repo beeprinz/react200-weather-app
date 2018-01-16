@@ -22,7 +22,7 @@ render() {
                 <div className="container">
                 <div className="row">
                 <div className="col-md-4">
-                <p className="text-center font-weight-bold">Temperature</p>
+                <p className="text-center font-weight-bold">Temperature (F)</p>
                 <p className="text-center">{city.currentTemp}</p>
                 </div>
                 <div className="col-md-4">
@@ -45,7 +45,7 @@ render() {
                 <p className="text-center">{city.highTemp}</p>
                 </div>
                 <div className="col-md-4">
-                <p className="text-center font-weight-bold">Wind Speed</p>
+                <p className="text-center font-weight-bold">Wind Speed (mph)</p>
                 <p className="text-center">{city.windSpeed}</p>
                 </div>
                 </div>

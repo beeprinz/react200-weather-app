@@ -6,6 +6,7 @@ import CityEntries from './CityEntries';
 function mapStoreToProps(store) {
   return {
     cityName: store.city.cityName,
+    error: store.city.error
     // currentTemp: store.city.currentTemp,
     // history: store.city.history
   };
