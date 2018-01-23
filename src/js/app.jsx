@@ -6,7 +6,7 @@ import History from './components/History'
 export default class App extends React.Component {
   render() {
     return <div className="container">
-        <h1 className="display-3">Cool Weather App!</h1>
+        <h1 className="display-3 text-light">Cool Weather App!</h1>
         <div className="row">
         <CityEntries />
 

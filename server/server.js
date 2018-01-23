@@ -15,7 +15,6 @@ app.get('/api/:name', (req,res) => {
     .then(r => res.send(r.data))
     .catch(err => res.status(500).send('bad response'));
 })
-//how does it know what $city is?
 
 //try other weather api that doesn't require the State or Country
 

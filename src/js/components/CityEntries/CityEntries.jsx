@@ -26,6 +26,7 @@ handleCityNameInput(e){
 
 handleCitySearch() {
     const { dispatch } = this.props;
+    console.log('what is dispatch?', dispatch)
     dispatch(getWeather(this.state.cityName));
 }
 //string previously in getWeather
@@ -46,12 +47,12 @@ render() {
     <div>  
         <div className="container"> 
         {/* <div className="btn-group" role="group" aria-label="Basic example">  */}
-        <button type="submit" className="btn btn-info mr-2" value="San Diego" onClick={ this.handleCityButton } >San Diego</button>
-        <button type="submit" className="btn btn-info mr-2" value="San Francisco" onClick={ this.handleCityButton } >San Francisco</button>
-        <button type="button" className="btn btn-info mr-2" value="New York" onClick={ this.handleCityButton }>New York</button>
-        <button type="button" className="btn btn-info mr-2" value="London" onClick={ this.handleCityButton }>London</button>
-        <button type="button" className="btn btn-info mr-2" value="Tokyo" onClick={ this.handleCityButton }>Tokyo</button>
-        <button type="button" className="btn btn-info" value="Dubai" onClick={ this.handleCityButton }>Dubai</button>
+        <button type="submit" className="btn btn-primary mr-2" value="San Diego" onClick={ this.handleCityButton } >San Diego</button>
+        <button type="submit" className="btn btn-primary mr-2" value="San Francisco" onClick={ this.handleCityButton } >San Francisco</button>
+        <button type="button" className="btn btn-primary mr-2" value="New York" onClick={ this.handleCityButton }>New York</button>
+        <button type="button" className="btn btn-primary mr-2" value="London" onClick={ this.handleCityButton }>London</button>
+        <button type="button" className="btn btn-primary mr-2" value="Tokyo" onClick={ this.handleCityButton }>Tokyo</button>
+        <button type="button" className="btn btn-primary" value="Dubai" onClick={ this.handleCityButton }>Dubai</button>
         {/* </div> */}
         </div>
 
@@ -69,7 +70,7 @@ render() {
           onChange= { this.handleCityNameInput }
           />
         </div>
-        <button type="submit" onClick={this.handleCitySearch} className="btn btn-outline-info my-4">
+        <button type="submit" onClick={this.handleCitySearch} className="btn btn-primary my-4">
           Find Weather!
         </button>
       </form>

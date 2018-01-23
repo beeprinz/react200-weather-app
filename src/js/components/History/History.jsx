@@ -28,8 +28,8 @@ render() {
     
     return (
     
-        <div className="card border-info">
-            <h5 className="card-header bg-info text-white">
+        <div className="card border-primary">
+            <h5 className="card-header bg-primary text-white">
             Search History
             </h5>
             <div className="card-body">
