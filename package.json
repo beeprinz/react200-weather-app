@@ -5,7 +5,8 @@
   "main": "server/index.js",
   "scripts": {
     "build": "npm run less && webpack",
-    "start": "node server/index.js",
+    // "start": "node server/index.js",
+    "start": "npm run build && node server",    
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js"
@@ -28,6 +29,7 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.0",
+    "redux-promise-middleware": "^5.0.0",
     "serve-favicon": "^2.0.1",
     "webpack": "^3.6.0"
   },
